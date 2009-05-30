@@ -1,0 +1,47 @@
+=clearfix
+  &:after
+    :content '.'
+    :display block
+    :clear both
+    :height 0
+    :visibility hidden
+
+body
+  :font-family Helvetica
+
+h1
+  :font-family georgia
+
+a:link, a:visited
+  :color inherit
+
+ol, li, h1
+  :font-weight normal
+  :margin 0
+  :padding 0
+
+li
+  :list-style none
+
+.letters
+  > li
+    +clearfix
+    :clear both
+    :border-bottom 1px solid #eee
+    h1
+      :float left
+      :font-size 2em
+      :color #ccc
+      :display block
+      :width 1.5em
+      :text-align center
+      :padding-right 0.2em
+    ul
+      :padding-top 0.7em
+      > li
+        :float left
+        :padding-right 1em
+        a:hover
+          :color #f00
+
+        

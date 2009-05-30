@@ -3,8 +3,13 @@
   %head
     %title Local sites
     %meta{ :'http-equiv' => 'content-type', :content => 'text/html; charset=utf-8' }/
+    %link{ :rel => 'stylesheet', :href => '/style.css' }
   %body
-    %ul
-      - @hosts.each do |host|
-        %li
-          %a{ :href => "http://#{host}"}= host.chomp('.local')
+    %ol.letters
+      - @hosts.each do |letter, hosts|
+        %li{ :id => letter }
+          %h1= letter.upcase
+          %ul.letter-hosts
+            - hosts.each do |host|
+              %li
+                %a{ :href => "http://#{host}"}= host.chomp('.local')
